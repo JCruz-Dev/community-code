@@ -18,6 +18,9 @@ const NavigationStyled = styled.nav`
   ${({ theme }) => theme.Mediaquery.small} {
     padding: 20px 40px;
   }
+  ${({ theme }) => theme.Mediaquery.medium} {
+    background-color: #22222e;
+  }
   top: 0;
   z-index: ${({ theme }) => theme.Zindex.zFixed};
 `;
