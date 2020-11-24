@@ -9,7 +9,7 @@ type NavigationTypes = {
 };
 
 const NavigationStyled = styled.nav<NavigationTypes>`
-  height: 90px;
+  height: 80px;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -83,13 +83,15 @@ const SideBarStyled = styled.div<NavigationTypes>`
   top: 0;
   width: 100vw;
   height: 100vh;
+  padding-top: 70px;
   span {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     color: #ffffff;
-    font-size: 25px;
-    line-height: 31px;
+
+    font-size: 16px;
+    line-height: 19px;
     margin-bottom: 50px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
