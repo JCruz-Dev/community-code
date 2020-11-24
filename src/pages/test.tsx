@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Button from '@Shared/button';
+import Navigation from '@Components/navegation';
 
 const ContainerStyled = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ const Test: React.FC = () => {
       <Button size="large" color="accent">
         Conoce lo que hacemos
       </Button>
+      <Navigation />
     </ContainerStyled>
   );
 };
