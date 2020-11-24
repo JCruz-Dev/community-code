@@ -3,12 +3,7 @@ import LogoFazt from '@Assets/img/logoFazt.svg';
 import Menu from '@Assets/img/menu.svg';
 import { useState } from 'react';
 
-type NavigationTypes = {
-  size?: 'small' | 'medium' | 'large';
-  color?: 'primary' | 'secondary' | 'accent';
-};
-
-const NavigationStyled = styled.nav<NavigationTypes>`
+const NavigationStyled = styled.nav`
   height: 80px;
   width: 100vw;
   display: flex;
@@ -26,7 +21,7 @@ const NavigationStyled = styled.nav<NavigationTypes>`
   top: 0;
   z-index: ${({ theme }) => theme.Zindex.zFixed};
 `;
-const NavigationContainerStyled = styled.div<NavigationTypes>`
+const NavigationContainerStyled = styled.div`
   height: 100%;
   width: 100%;
   max-width: 1140px;
@@ -34,7 +29,7 @@ const NavigationContainerStyled = styled.div<NavigationTypes>`
   justify-content: space-between;
   align-items: center;
 `;
-const NavigationOptionsStyled = styled.div<NavigationTypes>`
+const NavigationOptionsStyled = styled.div`
   display: flex;
   align-items: center;
   span {
@@ -56,7 +51,7 @@ const NavigationOptionsStyled = styled.div<NavigationTypes>`
     }
   }
 `;
-const NavigationOptionsFullStyled = styled.div<NavigationTypes>`
+const NavigationOptionsFullStyled = styled.div`
   display: none;
   align-items: center;
   span {
@@ -73,7 +68,7 @@ const NavigationOptionsFullStyled = styled.div<NavigationTypes>`
   }
 `;
 
-const SideBarStyled = styled.div<NavigationTypes>`
+const SideBarStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +94,7 @@ const SideBarStyled = styled.div<NavigationTypes>`
   }
 `;
 
-const ComponentNavigation: React.FC<NavigationTypes> = () => {
+const ComponentNavigation: React.FC = () => {
   const [sideBar, setsideBar] = useState(false);
   return (
     <NavigationStyled>
