@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from '@Shared/button';
 import Navigation from '@Components/navegation';
+import Footer from '@Components/footer';
 
 const ContainerStyled = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ const Test: React.FC = () => {
         Conoce lo que hacemos
       </Button>
       <Navigation />
+      <Footer />
     </ContainerStyled>
   );
 };
