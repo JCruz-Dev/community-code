@@ -1,3 +1,4 @@
+import ComponentCommunity from '@Src/components/community';
 import ComponentHero from '@Src/components/hero';
 import ComponentKnowledge from '@Src/components/knowledge';
 import ComponentStudy from '@Src/components/study';
@@ -10,6 +11,7 @@ const IndexPage = () => (
     <ComponentStudy />
     <ComponentWeDo />
     <ComponentKnowledge />
+    <ComponentCommunity />
   </MainTemplate>
 );
 
