@@ -56,7 +56,7 @@ const TitleContainerStyled = styled.div`
     font-size: 31.25px;
     line-height: 149.2%;
     text-align: center;
-    max-width: 343px;
+    max-width: 320px;
     color: #ffffff;
     margin: 0px 10px;
     margin-bottom: 32px;
@@ -128,8 +128,9 @@ const SponsorsContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 94%;
   margin-top: 70px;
+  z-index: 1;
   ${({ theme }) => theme.Mediaquery.small} {
     position: absolute;
     bottom: -70px;
