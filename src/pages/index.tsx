@@ -1,15 +1,10 @@
-import Link from 'next/link';
-import Layout from '../components/Layout';
+import ComponentHero from '@Src/components/hero';
+import MainTemplate from '@Src/components/template/mainTemplate';
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Fazt Tech</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
+  <MainTemplate title="Home | Fazt Web">
+    <ComponentHero />
+  </MainTemplate>
 );
 
 export default IndexPage;
