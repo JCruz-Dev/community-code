@@ -1,4 +1,5 @@
 import ComponentHero from '@Src/components/hero';
+import ComponentKnowledge from '@Src/components/knowledge';
 import ComponentStudy from '@Src/components/study';
 import MainTemplate from '@Src/components/template/mainTemplate';
 import ComponentWeDo from '@Src/components/wedo';
@@ -8,6 +9,7 @@ const IndexPage = () => (
     <ComponentHero />
     <ComponentStudy />
     <ComponentWeDo />
+    <ComponentKnowledge />
   </MainTemplate>
 );
 
