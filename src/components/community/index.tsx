@@ -20,7 +20,7 @@ const CommunityContainerStyled = styled.div`
   max-width: 1140px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   ${({ theme }) => theme.Mediaquery.extrasmall} {
@@ -28,12 +28,12 @@ const CommunityContainerStyled = styled.div`
   }
   ${({ theme }) => theme.Mediaquery.small} {
     padding: 60px 40px;
-    padding-bottom: 100px;
+    padding-bottom: 180px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 80px 40px;
-    padding-bottom: 100px;
-    flex-direction: row;
+    padding-bottom: 150px;
+    flex-direction: row-reverse;
   }
 `;
 
@@ -88,125 +88,127 @@ const ContentIconContainerStyled = styled.div`
   justify-content: space-between;
 `;
 const ContentContainerStyled = styled.div`
-  width: 100%;
-  max-width: 375px;
+  width: 430px;
+  height: max-content;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  :root {
-    --circle-color: #393939;
-  }
-  .circle-container {
-    background-color: #393939;
-    display: grid;
-    justify-content: center;
+  margin-top: 50px;
+  div {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    position: relative;
-    text-align: center;
+    justify-content: center;
+    background-color: #393939;
+    span {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 149.19%;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
   }
-  .circle {
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
+`;
+
+const CircleContainerStyled1 = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  ${({ theme }) => theme.Mediaquery.small} {
+    width: 200px;
+    height: 300px;
   }
-  .circle {
-    border: 1px solid #e4e4e4;
-    position: relative;
+  ${({ theme }) => theme.Mediaquery.medium} {
+    width: 200px;
+    height: 250px;
   }
-  [class^='sub-circle'] {
-    background: #4ca9ff;
-    width: 38px;
-    height: 38px;
-    position: absolute;
+`;
+const CircleContainerStyled2 = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+`;
+const CircleContainerStyled3 = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 30px;
+  ${({ theme }) => theme.Mediaquery.small} {
+    margin-top: 0;
   }
+`;
+const CircleContainerStyled4 = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 30px;
+  ${({ theme }) => theme.Mediaquery.small} {
+    width: 200px;
+    height: 300px;
+    margin-top: 0;
+  }
+  ${({ theme }) => theme.Mediaquery.medium} {
+    width: 200px;
+    height: 250px;
+    margin-top: 0;
+  }
+`;
+
+const CircleStyled = styled.div`
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 1px #ffffff33;
+  position: relative;
+
   .sub-circle-1 {
+    position: absolute;
     top: 0;
     left: 0;
-    border-top-left-radius: 50px;
+    transform: rotateZ(-90deg);
+    width: 50%;
+    height: 50%;
+    background-color: #4ca9ff;
+    -moz-border-radius: 0 100% 0 0;
+    -webkit-border-radius: 0 100% 0 0;
+    border-radius: 0 100% 0 0;
   }
   .sub-circle-2 {
-    right: 0;
-    border-top-right-radius: 50px;
-    background: #393939;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #4ca9ff;
+    -moz-border-radius: 100px 100px 0 0;
+    -webkit-border-radius: 100px 100px 0 0;
+    border-radius: 100px 100px 0 0;
   }
   .sub-circle-3 {
-    bottom: 0;
+    position: absolute;
+    top: 0;
     left: 0;
-    border-bottom-left-radius: 50px;
-    background: #393939;
+    transform: rotateZ(-44deg);
+    background-color: transparent;
+    border-right: 39px solid transparent;
+    border-top: 39px solid #4ca9ff;
+    border-left: 39px solid #4ca9ff;
+    border-bottom: 39px solid #4ca9ff;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
   }
   .sub-circle-4 {
-    bottom: 0;
-    right: 0;
-    border-bottom-right-radius: 50px;
-    background: #393939;
-  }
-  [class*='s0-'] {
-    background: #393939;
-  }
-  [class*='s1-'] {
-    background: #393939;
-  }
-  [class*='s2-'] {
-    background: #393939;
-  }
-  .s0-b,
-  .s0-a {
-    background: #4ca9ff;
-  }
-  .s1-a,
-  .s1-b,
-  .s1-c {
-    background: #4ca9ff;
-  }
-  .s2-a,
-  .s2-b,
-  .s2-c,
-  .s2-d {
-    background: #4ca9ff;
-  }
-  .container {
-    display: grid;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(209px, 209px));
-    grid-auto-rows: minmax(90px, auto);
-    grid-auto-flow: dense;
-    grid-gap: 1.5rem;
-    justify-content: center;
-    margin-top: 4rem;
-  }
-  .circle-container:nth-child(1) {
-    grid-column: 1;
-    grid-row: span 3;
-  }
-  .circle-container:nth-child(2) {
-    grid-column: 2;
-    grid-row: span 2;
-  }
-  .circle-container:nth-child(3) {
-    grid-column: 1;
-    grid-row: span 2;
-  }
-  .circle-container:nth-child(4) {
-    grid-column: 2;
-    grid-row: 3 / span 3;
-  }
-  @media screen and (max-width: 991px) {
-    .container {
-      grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
-      grid-auto-rows: minmax(auto, auto);
-    }
-    .circle-container {
-      padding: 4rem;
-      grid-column: unset !important;
-      grid-row: unset !important;
-    }
-  }
-  p {
-    position: relative;
-    margin-bottom: 0;
+    height: 100%;
+    background-color: #4ca9ff;
+    border-radius: 100%;
   }
 `;
 
@@ -230,40 +232,30 @@ const ComponentCommunity: React.FC = () => {
           </ContentIconContainerStyled>
         </TitleContainerStyled>
         <ContentContainerStyled>
-          <div className="container">
-            <div className="circle-container">
-              <div className="circle">
-                <div className="sub-circle-1" />
-                <div className="sub-circle-2" />
-                <div className="sub-circle-3" />
-                <div className="sub-circle-4" />
-              </div>
-            </div>
-            <div className="circle-container">
-              <div className="circle">
-                <div className="sub-circle-1 s0-a" />
-                <div className="sub-circle-2 s0-b" />
-                <div className="sub-circle-3 s0-c" />
-                <div className="sub-circle-4 s0-d" />
-              </div>
-            </div>
-            <div className="circle-container">
-              <div className="circle">
-                <div className="sub-circle-1 s1-a" />
-                <div className="sub-circle-2 s1-b" />
-                <div className="sub-circle-3 s1-c" />
-                <div className="sub-circle-4 s1-d" />
-              </div>
-            </div>
-            <div className="circle-container">
-              <div className="circle">
-                <div className="sub-circle-1 s2-a" />
-                <div className="sub-circle-2 s2-b" />
-                <div className="sub-circle-3 s2-c" />
-                <div className="sub-circle-4 s2-d" />
-              </div>
-            </div>
-          </div>
+          <CircleContainerStyled1>
+            <span>Conoce</span>
+            <CircleStyled className="circle">
+              <div className="sub-circle-1" />
+            </CircleStyled>
+          </CircleContainerStyled1>
+          <CircleContainerStyled2>
+            <span>Aprende</span>
+            <CircleStyled className="circle">
+              <div className="sub-circle-2" />
+            </CircleStyled>
+          </CircleContainerStyled2>
+          <CircleContainerStyled3>
+            <span>Crece</span>
+            <CircleStyled className="circle">
+              <div className="sub-circle-3" />
+            </CircleStyled>
+          </CircleContainerStyled3>
+          <CircleContainerStyled4>
+            <span>Comparte</span>
+            <CircleStyled className="circle">
+              <div className="sub-circle-4" />
+            </CircleStyled>
+          </CircleContainerStyled4>
         </ContentContainerStyled>
       </CommunityContainerStyled>
     </CommunityStyled>

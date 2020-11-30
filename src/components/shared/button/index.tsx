@@ -11,7 +11,7 @@ const ButtonStyled = styled.button<ButtonTypes>`
   background-color: ${({ theme, color }) => color === 'secondary' && theme.Colors.ColorsMain.dark};
   background-color: ${({ theme, color }) => color === 'accent' && theme.Colors.ColorsMain.accent};
   height: max-content;
-  width: max-content;
+  width: 250px;
   border: none;
   border-radius: ${({ theme }) => theme.Borders};
   color: ${({ theme }) => theme.Colors.ShadesWhite[200]};
@@ -20,17 +20,15 @@ const ButtonStyled = styled.button<ButtonTypes>`
   font-size: ${({ theme }) => theme.Texts.Normal.FontSize};
   line-height: ${({ theme }) => theme.Texts.Normal.LineHeight};
   padding: 16px 16px;
+  ${({ theme }) => theme.Mediaquery.medium} {
+    padding: 24px 32px;
+  }
   cursor: pointer;
   ${({ size }) =>
     size === 'small' &&
     css`
       border-radius: 8px;
       padding: 16px 24px;
-    `};
-  ${({ size }) =>
-    size === 'large' &&
-    css`
-      padding: 24px 32px;
     `};
   transition: all 0.5s ease;
 `;

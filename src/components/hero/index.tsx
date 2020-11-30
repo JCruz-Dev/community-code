@@ -32,7 +32,7 @@ const HeroContainerStyled = styled.div`
     flex-direction: row;
     justify-content: center;
     padding: 60px 40px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 80px 40px;

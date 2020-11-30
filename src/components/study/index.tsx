@@ -165,9 +165,18 @@ const ComponentStudy: React.FC = () => {
             <StudtyImg />
           </TitleContainerFullStyled>
           <VideoContainerStyled>
-            <ThumbVideo />
-            <ThumbVideo />
-            <ThumbVideo />
+            <ThumbVideo
+              link="https://www.youtube.com/watch?v=chPhlsHoEPo"
+              thumbnail="http://i3.ytimg.com/vi/chPhlsHoEPo/maxresdefault.jpg"
+            />
+            <ThumbVideo
+              link="https://www.youtube.com/watch?v=rbuYtrNUxg4"
+              thumbnail="http://i3.ytimg.com/vi/rbuYtrNUxg4/maxresdefault.jpg"
+            />
+            <ThumbVideo
+              link="https://www.youtube.com/watch?v=k3YsT7IZb6w"
+              thumbnail="http://i3.ytimg.com/vi/k3YsT7IZb6w/maxresdefault.jpg"
+            />
           </VideoContainerStyled>
         </StudyContainerStyled>
       </StudyContainerColorStyled>

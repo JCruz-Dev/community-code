@@ -30,7 +30,7 @@ const WeDoContainerStyled = styled.div`
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 80px 40px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
   }
 `;
 
@@ -146,6 +146,7 @@ const TitleSelectContainerStyled = styled.div`
     font-weight: bold;
     font-size: 20px;
     line-height: 59px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -159,8 +160,11 @@ const TitleSelectContainerStyled = styled.div`
     line-height: 149.2%;
     text-align: center;
     color: #e6e5e5;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     max-width: 400px;
+  }
+  button {
+    margin-top: 20px;
   }
   ${({ theme }) => theme.Mediaquery.small} {
     justify-self: flex-start;

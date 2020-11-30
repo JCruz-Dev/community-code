@@ -92,7 +92,6 @@ const TitleContainerStyled = styled.div`
     margin: 0px 10px;
     margin-bottom: 32px;
     ${({ theme }) => theme.Mediaquery.small} {
-      text-align: left;
       font-size: 25px;
       line-height: 149.2%;
       max-width: 347px;
@@ -160,9 +159,18 @@ const ComponentKnowledge: React.FC = () => {
             <ButtonShared color="accent">Ver el blog completo</ButtonShared>
           </TitleContainerStyled>
           <VideoContainerStyled>
-            <ThumBlogShared />
-            <ThumBlogShared />
-            <ThumBlogShared />
+            <ThumBlogShared
+              link="https://blog.faztweb.com/2020/02/nuevos-logos-2020-fazttech-y-faztcode.html"
+              thumbnail="https://lh6.googleusercontent.com/proxy/FgtjqfY5cDerKU1eNKQ_zAoEWghJMxLdshm3LoLWH1YzlZbxoMoSuGHMj1cPAGKEKH8wkeuJ9u9IImr4=w1200-h630-n-k-no-nu"
+            />
+            <ThumBlogShared
+              link="https://blog.faztweb.com/2018/05/desarrollo-web-en-visual-studio-code.html"
+              thumbnail="https://1.bp.blogspot.com/-EW9IYLNiqDA/Wv4r4sOGveI/AAAAAAAABUg/lL0B1cIEfCkrVROQXiApi92D6brGMLUPQCLcBGAs/w1200-h630-p-k-no-nu/visual-studio-code.jpg"
+            />
+            <ThumBlogShared
+              link="https://blog.faztweb.com/2018/05/como-ser-un-hacker-por-eric-s-raymond.html"
+              thumbnail="https://lh4.googleusercontent.com/proxy/k9P-RqZY2bbkH831r5i7t10e5AyHhebuU1NxFRiUNqNapj_P8BtKw676kFW9v0U2BvzdP8XJWBY-R4hQxpxAv6pq5ALJb-VT0218x91g4cl7DQeFwGo9lQqqkwv96Acnw-2hj-0mx2Se_ks=w1200-h630-p-k-no-nu"
+            />
           </VideoContainerStyled>
         </KnowledgeContainerStyled>
       </KnowledgeContainerColorStyled>

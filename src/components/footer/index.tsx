@@ -5,6 +5,7 @@ import IconLinkedin from '@Assets/img/iconLinkedin.svg';
 import IconFacebook from '@Assets/img/iconFacebook.svg';
 import IconGithub from '@Assets/img/iconGithub.svg';
 import IconYoutube from '@Assets/img/iconYoutube.svg';
+import NewsletterShared from '../shared/newsletter';
 
 const FooterStyled = styled.nav`
   height: max-content;
@@ -13,7 +14,11 @@ const FooterStyled = styled.nav`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.Colors.ShadesDark[400]};
-  padding: 150px 0px;
+  padding-bottom: 150px;
+  position: relative;
+  ${({ theme }) => theme.Mediaquery.small} {
+    padding-top: 150px;
+  }
 `;
 const FooterContainerStyled = styled.div`
   display: flex;
@@ -110,6 +115,7 @@ const ComponentFooter: React.FC = () => {
   return (
     <FooterStyled>
       <FooterContainerStyled>
+        <NewsletterShared />
         <FooterContentStyled>
           <FooterTitleStyled>Nosotros</FooterTitleStyled>
           <FooterSubTitleStyled href="/#">Blog</FooterSubTitleStyled>
