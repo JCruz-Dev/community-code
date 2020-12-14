@@ -3,6 +3,9 @@ import LogoFazt from '@Assets/img/logoFazt.svg';
 import Menu from '@Assets/img/menu.svg';
 import { useState } from 'react';
 
+type SidebarProps = {
+  sidebarStatus: boolean;
+};
 const NavigationStyled = styled.nav`
   height: 80px;
   width: 100vw;
@@ -27,7 +30,7 @@ const NavigationStyled = styled.nav`
 const NavigationContainerStyled = styled.div`
   height: 100%;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,13 +39,17 @@ const NavigationOptionsStyled = styled.div`
   display: flex;
   align-items: center;
   span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+    font: normal normal 1rem/19px 'Roboto';
     color: #ffffff;
-    font-size: 16px;
-    line-height: 19px;
-    margin-right: 20px;
+    margin-right: 2rem;
+    &:hover {
+      color: ${({ theme }) => theme.Colors.ColorsMain.base};
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    cursor: pointer;
+    transition: color 0.2s;
   }
   button {
     display: flex;
@@ -58,20 +65,16 @@ const NavigationOptionsFullStyled = styled.div`
   display: none;
   align-items: center;
   span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+    font: normal normal 1rem/19px 'Roboto';
     color: #ffffff;
-    font-size: 16px;
-    line-height: 19px;
-    margin-right: 20px;
+    margin-right: 2rem;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     display: flex;
   }
 `;
 
-const SideBarStyled = styled.div`
+const SideBarStyled = styled.div<SidebarProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,14 +85,12 @@ const SideBarStyled = styled.div`
   width: 100vw;
   height: 100vh;
   padding-top: 70px;
+  visibility: ${(props) => (props.sidebarStatus ? 'visible' : 'none')};
+  transition: all 0.3s;
+  transform: ${(props) => (props.sidebarStatus ? 'translateY(0)' : 'translateY(-100%)')};
   span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+    font: normal normal 1rem/19px 'Roboto';
     color: #ffffff;
-
-    font-size: 16px;
-    line-height: 19px;
     margin-bottom: 50px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
@@ -116,15 +117,13 @@ const ComponentNavigation: React.FC = () => {
           </button>
         </NavigationOptionsStyled>
       </NavigationContainerStyled>
-      {sideBar && (
-        <SideBarStyled>
-          <span>Contactos</span>
-          <span>Servicios</span>
-          <span>Blog</span>
-          <span>Cursos</span>
-          <span>Comunidad</span>
-        </SideBarStyled>
-      )}
+      <SideBarStyled sidebarStatus={sideBar}>
+        <span>Contactos</span>
+        <span>Servicios</span>
+        <span>Blog</span>
+        <span>Cursos</span>
+        <span>Comunidad</span>
+      </SideBarStyled>
     </NavigationStyled>
   );
 };
