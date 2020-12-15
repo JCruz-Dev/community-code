@@ -1,4 +1,5 @@
 const MediaQuery = {
+  mini: '@media screen and (min-width: 320px)',
   extrasmall: '@media screen and (min-width: 375px)',
   small: '@media screen and (min-width: 768px)',
   medium: '@media screen and (min-width: 1024px)',

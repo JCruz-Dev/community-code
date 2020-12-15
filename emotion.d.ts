@@ -67,6 +67,7 @@ declare module '@emotion/react' {
   }
 
   interface IMediaQuery {
+    mini: string;
     extrasmall: string;
     small: string;
     medium: string;
