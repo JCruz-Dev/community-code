@@ -29,7 +29,7 @@ const ThumbnailImageStyled = styled.img<ThumbVideoTypes>`
   }
   ${({ theme }) => theme.Mediaquery.extrasmall} {
     width: 310px;
-    left: -20px;
+    left: -16px;
     object-fit: cover;
     border-radius: 10px;
   }
