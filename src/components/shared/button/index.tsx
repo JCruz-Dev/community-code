@@ -16,7 +16,7 @@ const ButtonStyled = styled.button<ButtonTypes>`
   border-radius: ${({ theme }) => theme.Borders};
   color: ${({ theme }) => theme.Colors.ShadesWhite[200]};
   font-family: ${({ theme }) => theme.Fontfamily};
-  font-weight: 700;
+  font-weight: 500;
   font-size: ${({ theme }) => theme.Texts.Normal.FontSize};
   line-height: ${({ theme }) => theme.Texts.Normal.LineHeight};
   padding: 24px 16px;
