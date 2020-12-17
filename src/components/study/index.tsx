@@ -31,6 +31,9 @@ const StudyStyled = styled.div`
     transform: skewY(-10deg);
     z-index: 0;
   }
+  ${({ theme }) => theme.Mediaquery.extralarge} {
+    padding-top: 1rem;
+  }
 `;
 
 const StudyContainerColorStyled = styled.div`
