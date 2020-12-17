@@ -16,23 +16,15 @@ const StudyStyled = styled.div`
     content: '';
     display: flex;
     width: 100%;
-    max-width: 720px;
-    @media screen and (min-width: 834px) {
-      max-width: 780px;
-    }
-    ${({ theme }) => theme.Mediaquery.medium} {
-      max-width: 1300px;
-    }
     height: 350px;
-    background-color: #1d1d1d;
+    background-color: #2a3b46;
     position: absolute;
-    bottom: -120px;
-    border-radius: 10px;
+    bottom: -130px;
     transform: skewY(-10deg);
     z-index: 0;
   }
   ${({ theme }) => theme.Mediaquery.extralarge} {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 `;
 
@@ -55,6 +47,25 @@ const StudyContainerColorStyled = styled.div`
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     max-width: 1300px;
+  }
+  ::after {
+    content: '';
+    display: flex;
+    width: 100%;
+    max-width: 720px;
+    @media screen and (min-width: 834px) {
+      max-width: 780px;
+    }
+    ${({ theme }) => theme.Mediaquery.medium} {
+      max-width: 1300px;
+    }
+    height: 350px;
+    background-color: #1d1d1d;
+    position: absolute;
+    bottom: -170px;
+    border-radius: 10px;
+    transform: skewY(-13deg);
+    z-index: -1;
   }
 `;
 
