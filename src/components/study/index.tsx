@@ -22,6 +22,9 @@ const StudyStyled = styled.div`
     bottom: -130px;
     transform: skewY(-10deg);
     z-index: 0;
+    @media screen and (min-width: 1920px) {
+      display: none;
+    }
   }
   ${({ theme }) => theme.Mediaquery.extralarge} {
     padding-top: 1.5rem;
@@ -53,19 +56,20 @@ const StudyContainerColorStyled = styled.div`
     display: flex;
     width: 100%;
     max-width: 720px;
+    height: 350px;
+    background-color: #1d1d1d;
+    position: absolute;
+    bottom: -150px;
+    border-radius: 10px;
+    transform: skewY(-13deg);
+    z-index: -1;
     @media screen and (min-width: 834px) {
       max-width: 780px;
     }
     ${({ theme }) => theme.Mediaquery.medium} {
       max-width: 1300px;
+      bottom: -170px;
     }
-    height: 350px;
-    background-color: #1d1d1d;
-    position: absolute;
-    bottom: -170px;
-    border-radius: 10px;
-    transform: skewY(-13deg);
-    z-index: -1;
   }
 `;
 
