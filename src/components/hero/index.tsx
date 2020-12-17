@@ -25,18 +25,19 @@ const HeroContainerStyled = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  ${({ theme }) => theme.Mediaquery.mini} {
+    padding-top: 1.5rem;
+  }
   ${({ theme }) => theme.Mediaquery.extrasmall} {
-    padding: 80px 30px;
+    padding: 36px 30px 80px 30px;
   }
   ${({ theme }) => theme.Mediaquery.small} {
     flex-direction: row;
     justify-content: center;
-    padding: 60px 40px;
-    padding-bottom: 150px;
+    padding: 43px 40px 200px 40px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
-    padding: 80px 40px;
-    padding-bottom: 100px;
+    padding: 40px 25px 150px 40px;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -52,29 +53,27 @@ const TitleContainerStyled = styled.div`
   h1 {
     font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
-    font-size: 31.25px;
+    font-weight: 500;
+    font-size: ${({ theme }) => theme.Texts.Big.FontSize};
     line-height: 149.2%;
     text-align: center;
     max-width: 320px;
     color: #ffffff;
-    margin: 0px 10px;
+    margin: 0 10px;
     margin-bottom: 32px;
     ${({ theme }) => theme.Mediaquery.small} {
       text-align: left;
-      font-size: 25px;
+      font-size: ${({ theme }) => theme.Texts.Medium.FontSize};
       line-height: 149.2%;
       max-width: 347px;
+      margin-top: 0;
     }
     ${({ theme }) => theme.Mediaquery.medium} {
       text-align: left;
-      font-size: 39.06px;
+      font-size: ${({ theme }) => theme.Texts.Bigger.FontSize};
       line-height: 59px;
       max-width: 550px;
     }
-  }
-  ${({ theme }) => theme.Mediaquery.small} {
-    align-items: flex-start;
   }
   button {
     ${({ theme }) => theme.Mediaquery.small} {
@@ -93,8 +92,9 @@ const VideoContainerStyled = styled.div`
   align-items: center;
   iframe {
     width: 100%;
+    border-radius: 10px;
     ${({ theme }) => theme.Mediaquery.medium} {
-      width: 500px;
+      width: 540px;
       height: 300px;
     }
   }
@@ -105,11 +105,7 @@ const VideoContainerStyled = styled.div`
       margin-left: 15px;
     }
     span {
-      font-family: Roboto;
-      font-style: italic;
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 23px;
+      font: italic 300 20px/23px 'Roboto';
       display: flex;
       align-items: center;
 
@@ -129,23 +125,27 @@ const SponsorsContainerStyled = styled.div`
   flex-direction: column;
   align-items: center;
   width: 94%;
-  margin-top: 70px;
   z-index: 1;
+  ${({ theme }) => theme.Mediaquery.mini} {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  ${({ theme }) => theme.Mediaquery.extrasmall} {
+  }
   ${({ theme }) => theme.Mediaquery.small} {
     position: absolute;
-    bottom: -70px;
+    bottom: -107px;
     align-self: center;
     justify-self: center;
     background: #1c1e24;
     border-radius: 4px;
     padding: 20px 20px;
   }
+  ${({ theme }) => theme.Mediaquery.medium} {
+    margin-top: 70px;
+  }
   p {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 29px;
+    font: normal 300 1rem/29px 'Roboto';
     text-align: center;
     color: #ffffff;
     a {
@@ -155,14 +155,23 @@ const SponsorsContainerStyled = styled.div`
       text-decoration: none;
     }
   }
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 15px;
-    svg {
-      margin: 0px 15px;
+  .sponsor-images {
+    ${({ theme }) => theme.Mediaquery.mini} {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: center;
+      align-items: center;
+      grid-gap: 1.75rem;
+    }
+    ${({ theme }) => theme.Mediaquery.small} {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+    ${({ theme }) => theme.Mediaquery.large} {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(1, 1fr);
     }
   }
 `;
@@ -194,7 +203,7 @@ const ComponentHero: React.FC = () => {
             Ellos son parte de Fazt tech
             <a href="http://">¿Quieres unirte?</a>
           </p>
-          <div>
+          <div className="sponsor-images">
             <Sponsor1 />
             <Sponsor2 />
             <Sponsor3 />

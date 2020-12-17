@@ -18,18 +18,26 @@ const ThumbVideoStyled = styled.div<ThumbVideoTypes>`
   }
 `;
 const ThumbnailImageStyled = styled.img<ThumbVideoTypes>`
-  width: 310px;
-  height: 160px;
+  position: absolute;
+  top: 16px;
+  height: 172px;
+  ${({ theme }) => theme.Mediaquery.mini} {
+    width: 260px;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  ${({ theme }) => theme.Mediaquery.extrasmall} {
+    width: 310px;
+    left: -20px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
   ${({ theme }) => theme.Mediaquery.small} {
     width: 280px;
-    height: 130px;
+    height: 150px;
   }
-  position: absolute;
-  left: -20px;
-  top: 22px;
-  object-fit: cover;
   filter: drop-shadow(0px 15px 10px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
   :hover {
     cursor: pointer;
   }
