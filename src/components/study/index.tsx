@@ -17,10 +17,13 @@ const StudyStyled = styled.div`
     display: flex;
     width: 100%;
     max-width: 720px;
+    @media screen and (min-width: 834px) {
+      max-width: 780px;
+    }
     ${({ theme }) => theme.Mediaquery.medium} {
       max-width: 1300px;
     }
-    height: 400px;
+    height: 350px;
     background-color: #1d1d1d;
     position: absolute;
     bottom: -120px;
@@ -39,9 +42,13 @@ const StudyContainerColorStyled = styled.div`
   align-items: center;
   background-color: #1d1d1d;
   z-index: 1;
-
   ${({ theme }) => theme.Mediaquery.small} {
     margin-top: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  @media screen and (min-width: 834px) {
+    max-width: 780px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     max-width: 1300px;
@@ -59,10 +66,12 @@ const StudyContainerStyled = styled.div`
   align-items: center;
   position: relative;
   ${({ theme }) => theme.Mediaquery.extrasmall} {
-    padding: 80px 30px;
+    padding: 4rem 0;
   }
   ${({ theme }) => theme.Mediaquery.small} {
-    padding: 60px 40px;
+    padding: 60px 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 80px 40px;
@@ -80,21 +89,23 @@ const TitleContainerStyled = styled.div`
     align-items: flex-start;
   }
   h1 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 149.2%;
+    font: normal 500 25px/149.2% 'Roboto';
     text-align: center;
-    max-width: 320px;
     color: #ffffff;
-    margin: 0px 10px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    ${({ theme }) => theme.Mediaquery.mini} {
+      padding-top: 2rem;
+    }
+    ${({ theme }) => theme.Mediaquery.extrasmall} {
+      padding-top: 0;
+      margin-bottom: 32px;
+    }
     ${({ theme }) => theme.Mediaquery.small} {
       text-align: left;
       font-size: 25px;
       line-height: 149.2%;
       max-width: 347px;
+      margin-right: 0;
     }
     ${({ theme }) => theme.Mediaquery.medium} {
       text-align: left;
@@ -104,20 +115,25 @@ const TitleContainerStyled = styled.div`
     }
   }
   p {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 149.2%;
+    font: normal 400 1rem/149.2% 'Roboto';
     text-align: center;
-    color: #ffffff;
+    color: #e6e5e5;
     max-width: 320px;
     margin-bottom: 32px;
+    ${({ theme }) => theme.Mediaquery.mini} {
+      line-height: 1.5rem;
+    }
+    ${({ theme }) => theme.Mediaquery.small} {
+      max-width: 532px;
+    }
+
     ${({ theme }) => theme.Mediaquery.medium} {
       text-align: left;
       font-size: 20px;
       line-height: 149.2%;
-      max-width: 550px;
+    }
+    ${({ theme }) => theme.Mediaquery.large} {
+      max-width: 551px;
     }
   }
 `;
@@ -128,6 +144,9 @@ const VideoContainerStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  ${({ theme }) => theme.Mediaquery.large} {
+    justify-content: flex-start;
+  }
 `;
 
 const TitleContainerFullStyled = styled.div`
@@ -160,7 +179,7 @@ const ComponentStudy: React.FC = () => {
                 distintos cursos con temas diferentes para lo que requieras en tu carrera y compartir lo
                 aprendido con la comunidad.
               </p>
-              <ButtonShared>Conoce lo que hacemos</ButtonShared>
+              <ButtonShared>Ver todos los cursos</ButtonShared>
             </TitleContainerStyled>
             <StudtyImg />
           </TitleContainerFullStyled>
