@@ -19,7 +19,7 @@ const ButtonStyled = styled.button<ButtonTypes>`
   font-weight: 700;
   font-size: ${({ theme }) => theme.Texts.Normal.FontSize};
   line-height: ${({ theme }) => theme.Texts.Normal.LineHeight};
-  padding: 16px 16px;
+  padding: 24px 16px;
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 24px 32px;
   }
