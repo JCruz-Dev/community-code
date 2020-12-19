@@ -10,7 +10,6 @@ const ThumBlogStyled = styled.div<ThumBlogTypes>`
   position: relative;
   width: 190px;
   height: 140px;
-  margin: 10px 10px;
   border-radius: 10px;
   ${({ theme }) => theme.Mediaquery.small} {
     width: 190px;

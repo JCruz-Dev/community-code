@@ -11,21 +11,35 @@ const KnowledgeStyled = styled.div`
   position: relative;
   justify-content: center;
   background-color: #2a3b46;
-  ::after {
+  ::after,
+  ::before {
     content: '';
     display: flex;
     width: 100%;
-    max-width: 720px;
-    ${({ theme }) => theme.Mediaquery.medium} {
-      max-width: 1300px;
-    }
     height: 400px;
     background-color: #1d1d1d;
     position: absolute;
-    bottom: -120px;
+    bottom: -160px;
+    transform: skewY(12deg);
+    z-index: 0;
+  }
+  ::after {
     border-radius: 10px;
+    ${({ theme }) => theme.Mediaquery.medium} {
+      max-width: 1300px;
+    }
+  }
+  :before {
+    width: 100vw;
+    bottom: -130px;
+    left: 0;
+    right: 0;
     transform: skewY(10deg);
     z-index: 0;
+    @media screen and (min-width: 1920px) {
+      display: none;
+    }
+    background: #2a3b46;
   }
 `;
 
@@ -38,8 +52,12 @@ const KnowledgeContainerColorStyled = styled.div`
   align-items: center;
   background-color: #1d1d1d;
   z-index: 1;
-
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   ${({ theme }) => theme.Mediaquery.small} {
+    margin-top: 52px;
+  }
+  ${({ theme }) => theme.Mediaquery.large} {
     margin-top: 100px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
@@ -58,9 +76,11 @@ const KnowledgeContainerStyled = styled.div`
   align-items: center;
   position: relative;
   ${({ theme }) => theme.Mediaquery.extrasmall} {
-    padding: 80px 30px;
+    padding: 0 30px;
   }
   ${({ theme }) => theme.Mediaquery.small} {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     padding: 60px 40px;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
@@ -87,14 +107,18 @@ const TitleContainerStyled = styled.div`
     font-size: 25px;
     line-height: 149.2%;
     text-align: center;
-    max-width: 320px;
     color: #ffffff;
     margin: 0px 10px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+    ${({ theme }) => theme.Mediaquery.mini} {
+      width: 320px;
+      padding-top: 4rem;
+    }
     ${({ theme }) => theme.Mediaquery.small} {
+      padding-top: 0;
       font-size: 25px;
       line-height: 149.2%;
-      max-width: 347px;
+      width: 557px;
     }
     ${({ theme }) => theme.Mediaquery.medium} {
       text-align: left;
@@ -102,7 +126,7 @@ const TitleContainerStyled = styled.div`
       line-height: 59px;
       max-width: 666px;
       margin: 0px 0px;
-      margin-bottom: 32px;
+      margin-bottom: 1rem;
     }
   }
   p {
@@ -113,13 +137,15 @@ const TitleContainerStyled = styled.div`
     line-height: 149.2%;
     text-align: center;
     color: #ffffff;
-    max-width: 320px;
+    width: 320px;
     margin-bottom: 32px;
-    ${({ theme }) => theme.Mediaquery.medium} {
-      text-align: left;
+    ${({ theme }) => theme.Mediaquery.small} {
       font-size: 20px;
       line-height: 149.2%;
-      max-width: 582px;
+      width: 582px;
+    }
+    ${({ theme }) => theme.Mediaquery.medium} {
+      text-align: left;
     }
   }
 `;
@@ -135,12 +161,25 @@ const VideoContainerStyled = styled.div`
     width: 90%;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 2rem;
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     width: 500px;
     height: 350px;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  .thumblog-item {
+    margin-bottom: 2rem;
+    :nth-of-type(2) {
+      margin-right: 0;
+    }
+    :nth-of-type(3) {
+      margin-right: 0;
+    }
+    ${({ theme }) => theme.Mediaquery.small} {
+      margin-right: 2rem;
+    }
   }
 `;
 
@@ -159,18 +198,24 @@ const ComponentKnowledge: React.FC = () => {
             <ButtonShared color="accent">Ver el blog completo</ButtonShared>
           </TitleContainerStyled>
           <VideoContainerStyled>
-            <ThumBlogShared
-              link="https://blog.faztweb.com/2020/02/nuevos-logos-2020-fazttech-y-faztcode.html"
-              thumbnail="https://lh6.googleusercontent.com/proxy/FgtjqfY5cDerKU1eNKQ_zAoEWghJMxLdshm3LoLWH1YzlZbxoMoSuGHMj1cPAGKEKH8wkeuJ9u9IImr4=w1200-h630-n-k-no-nu"
-            />
-            <ThumBlogShared
-              link="https://blog.faztweb.com/2018/05/desarrollo-web-en-visual-studio-code.html"
-              thumbnail="https://1.bp.blogspot.com/-EW9IYLNiqDA/Wv4r4sOGveI/AAAAAAAABUg/lL0B1cIEfCkrVROQXiApi92D6brGMLUPQCLcBGAs/w1200-h630-p-k-no-nu/visual-studio-code.jpg"
-            />
-            <ThumBlogShared
-              link="https://blog.faztweb.com/2018/05/como-ser-un-hacker-por-eric-s-raymond.html"
-              thumbnail="https://lh4.googleusercontent.com/proxy/k9P-RqZY2bbkH831r5i7t10e5AyHhebuU1NxFRiUNqNapj_P8BtKw676kFW9v0U2BvzdP8XJWBY-R4hQxpxAv6pq5ALJb-VT0218x91g4cl7DQeFwGo9lQqqkwv96Acnw-2hj-0mx2Se_ks=w1200-h630-p-k-no-nu"
-            />
+            <div className="thumblog-item">
+              <ThumBlogShared
+                link="https://blog.faztweb.com/2020/02/nuevos-logos-2020-fazttech-y-faztcode.html"
+                thumbnail="https://lh6.googleusercontent.com/proxy/FgtjqfY5cDerKU1eNKQ_zAoEWghJMxLdshm3LoLWH1YzlZbxoMoSuGHMj1cPAGKEKH8wkeuJ9u9IImr4=w1200-h630-n-k-no-nu"
+              />
+            </div>
+            <div className="thumblog-item">
+              <ThumBlogShared
+                link="https://blog.faztweb.com/2018/05/desarrollo-web-en-visual-studio-code.html"
+                thumbnail="https://1.bp.blogspot.com/-EW9IYLNiqDA/Wv4r4sOGveI/AAAAAAAABUg/lL0B1cIEfCkrVROQXiApi92D6brGMLUPQCLcBGAs/w1200-h630-p-k-no-nu/visual-studio-code.jpg"
+              />
+            </div>
+            <div className="thumblog-item">
+              <ThumBlogShared
+                link="https://blog.faztweb.com/2018/05/como-ser-un-hacker-por-eric-s-raymond.html"
+                thumbnail="https://lh4.googleusercontent.com/proxy/k9P-RqZY2bbkH831r5i7t10e5AyHhebuU1NxFRiUNqNapj_P8BtKw676kFW9v0U2BvzdP8XJWBY-R4hQxpxAv6pq5ALJb-VT0218x91g4cl7DQeFwGo9lQqqkwv96Acnw-2hj-0mx2Se_ks=w1200-h630-p-k-no-nu"
+              />
+            </div>
           </VideoContainerStyled>
         </KnowledgeContainerStyled>
       </KnowledgeContainerColorStyled>
