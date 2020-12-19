@@ -61,7 +61,7 @@ const TitleContainerStyled = styled.div`
     font-size: 16px;
     line-height: 149.2%;
     text-align: center;
-    color: #ffffff;
+    color: #e6e5e5;
     max-width: 320px;
     margin-bottom: 32px;
     ${({ theme }) => theme.Mediaquery.small} {
@@ -139,8 +139,7 @@ const ImageSelectContainerStyled = styled.img`
     grid-row: 1 / 3;
   }
   ${({ theme }) => theme.Mediaquery.large} {
-    margin-left: initial;
-    width: 438px;
+    width: 70%;
     height: 100%;
   }
 `;
@@ -154,27 +153,28 @@ const TitleSelectContainerStyled = styled.div`
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5625rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     text-align: center;
     color: #ffffff;
+    ${({ theme }) => theme.Mediaquery.large} {
+      font-size: 1.25rem;
+    }
   }
   span {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 149.2%;
     text-align: center;
     color: #e6e5e5;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     max-width: 400px;
   }
-  button {
-    margin-top: 20px;
-  }
+
   ${({ theme }) => theme.Mediaquery.mini} {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -202,14 +202,14 @@ const TitleSelectContainerStyled = styled.div`
       font-weight: 500;
     }
     span {
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 149.19%;
       max-width: 518px;
     }
   }
   ${({ theme }) => theme.Mediaquery.large} {
     h3 {
-      font-size: 31.25px;
+      font-size: 1.953125rem;
       font-weight: 500;
     }
     span {
@@ -234,12 +234,14 @@ const ComponentWeDo: React.FC = () => {
       title: 'Coaching',
       desc1:
         'Si ya eres parte de la comunidad de Fazt Tech o necesitas orientación y ayuda en tu carrera, ya tienes la oportunidad de recibir coaching directamente con los miembros de Fazt Tech para que impulses tu carrera a lo más alto.',
+      desc2: '',
       img: 'image1.jpg'
     },
     {
       title: 'Enterprise',
       desc1:
         'Ahora también te ayudamos a crecer tu negocio. Contrata los servicios de desarrollo de software con los mejores programadores de la comunidad Fazt Tech. Crea tus aplicaciones web, moviles, de escritorio y cualquier otra idea que tengas para tu negocio.',
+      desc2: '',
       img: 'image2.jpg'
     }
   ];
@@ -276,7 +278,7 @@ const ComponentWeDo: React.FC = () => {
           <TitleSelectContainerStyled>
             <h3>{optionSelect.title}</h3>
             <span>{optionSelect.desc1}</span>
-            {optionSelect.desc2 && <span>{optionSelect.desc2}</span>}
+            {optionSelect.desc2 !== '' ? <span>{optionSelect.desc2}</span> : null}
             <ButtonShared color="accent">Empezar hoy</ButtonShared>
           </TitleSelectContainerStyled>
         </ContentContainerStyled>
