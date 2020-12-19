@@ -130,6 +130,7 @@ const TitleContainerStyled = styled.div`
       font-size: 39.06px;
       line-height: 59px;
       max-width: 550px;
+      margin-bottom: 1rem;
     }
   }
   p {
