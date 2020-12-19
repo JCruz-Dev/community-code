@@ -38,6 +38,9 @@ const TagSelectStyled = styled.button<TagSelectTypes>`
   ${({ theme }) => theme.Mediaquery.mini} {
     width: 112px;
   }
+  ${({ theme }) => theme.Mediaquery.extrasmall} {
+    width: 150px;
+  }
   ${({ theme }) => theme.Mediaquery.small} {
     width: 155px;
   }
