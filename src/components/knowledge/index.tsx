@@ -142,7 +142,7 @@ const TitleContainerStyled = styled.div`
     font-size: 16px;
     line-height: 149.2%;
     text-align: center;
-    color: #ffffff;
+    color: #e6e5e5;
     width: 320px;
     margin-bottom: 32px;
     ${({ theme }) => theme.Mediaquery.small} {
