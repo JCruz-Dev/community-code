@@ -24,9 +24,8 @@ type TagSelectTypes = {
 };
 
 const TagSelectStyled = styled.button<TagSelectTypes>`
-  width: 155px;
   height: 119px;
-  margin: 0px 15px;
+  /* margin: 0px 15px; */
   border: none;
   display: flex;
   align-items: center;
@@ -36,6 +35,15 @@ const TagSelectStyled = styled.button<TagSelectTypes>`
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  ${({ theme }) => theme.Mediaquery.mini} {
+    width: 112px;
+  }
+  ${({ theme }) => theme.Mediaquery.small} {
+    width: 155px;
+  }
+  :focus {
+    border: 3px solid ${({ theme }) => theme.Colors.ShadesBlue[200]};
+  }
 `;
 const TagSelectContainerStyled = styled.div`
   height: 100%;
