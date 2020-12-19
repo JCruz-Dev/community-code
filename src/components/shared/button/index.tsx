@@ -7,7 +7,7 @@ type ButtonTypes = {
 };
 
 const ButtonStyled = styled.button<ButtonTypes>`
-  background-color: ${({ theme }) => theme.Colors.ColorsMain.base};
+  background-color: ${({ theme }) => theme.Colors.ColorsMain.dark};
   background-color: ${({ theme, color }) => color === 'secondary' && theme.Colors.ColorsMain.dark};
   background-color: ${({ theme, color }) => color === 'accent' && theme.Colors.ColorsMain.accent};
   height: max-content;
