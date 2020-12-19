@@ -25,6 +25,9 @@ const KnowledgeStyled = styled.div`
   }
   ::after {
     border-radius: 10px;
+    @media screen and (min-width: 834px) {
+      max-width: 780px;
+    }
     ${({ theme }) => theme.Mediaquery.medium} {
       max-width: 1300px;
     }
@@ -36,10 +39,10 @@ const KnowledgeStyled = styled.div`
     right: 0;
     transform: skewY(10deg);
     z-index: 0;
+    background-color: #2a3b46;
     @media screen and (min-width: 1920px) {
       display: none;
     }
-    background: #2a3b46;
   }
 `;
 
@@ -56,6 +59,9 @@ const KnowledgeContainerColorStyled = styled.div`
   border-top-right-radius: 10px;
   ${({ theme }) => theme.Mediaquery.small} {
     margin-top: 52px;
+  }
+  @media screen and (min-width: 834px) {
+    max-width: 780px;
   }
   ${({ theme }) => theme.Mediaquery.large} {
     margin-top: 100px;
@@ -163,6 +169,9 @@ const VideoContainerStyled = styled.div`
     flex-wrap: wrap;
     margin-left: 2rem;
   }
+  @media screen and (min-width: 834px) {
+    margin-left: 0;
+  }
   ${({ theme }) => theme.Mediaquery.medium} {
     width: 500px;
     height: 350px;
@@ -173,6 +182,12 @@ const VideoContainerStyled = styled.div`
     margin-bottom: 2rem;
     :nth-of-type(2) {
       margin-right: 0;
+      @media screen and (min-width: 834px) {
+        margin-left: 2rem;
+      }
+      ${({ theme }) => theme.Mediaquery.large} {
+        margin-right: 0;
+      }
     }
     :nth-of-type(3) {
       margin-right: 0;
