@@ -177,23 +177,29 @@ const VideoContainerStyled = styled.div`
     height: 350px;
     flex-direction: column;
     flex-wrap: wrap;
+    margin-left: 2rem;
   }
   .thumblog-item {
     margin-bottom: 2rem;
-    :nth-of-type(2) {
-      margin-right: 0;
-      @media screen and (min-width: 834px) {
-        margin-left: 2rem;
+    :nth-of-type(1) {
+      ${({ theme }) => theme.Mediaquery.small} {
+        margin-right: 2rem;
       }
       ${({ theme }) => theme.Mediaquery.large} {
         margin-right: 0;
       }
     }
+    :nth-of-type(2) {
+      margin-right: 0;
+      @media screen and (min-width: 834px) {
+        margin-left: 2rem;
+      }
+      ${({ theme }) => theme.Mediaquery.small} {
+        margin-right: 2rem;
+      }
+    }
     :nth-of-type(3) {
       margin-right: 0;
-    }
-    ${({ theme }) => theme.Mediaquery.small} {
-      margin-right: 2rem;
     }
   }
 `;
