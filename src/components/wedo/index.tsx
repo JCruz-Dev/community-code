@@ -233,16 +233,18 @@ const ComponentWeDo: React.FC = () => {
     {
       title: 'Coaching',
       desc1:
-        'Si ya eres parte de la comunidad de Fazt Tech o necesitas orientación y ayuda en tu carrera, ya tienes la oportunidad de recibir coaching directamente con los miembros de Fazt Tech para que impulses tu carrera a lo más alto.',
+        'Si ya eres parte de la comunidad de Fazt Tech o necesitas orientación y ayuda en tu carrera, ya tienes la oportunidad de recibir coaching para que impulses tu carrera a lo más alto. Para empezar, solo debes hacer click en Join/Unirse cuando entres al enlace.',
       desc2: '',
-      img: 'image1.jpg'
+      img: 'image1.jpg',
+      url: 'https://www.youtube.com/faztcode'
     },
     {
       title: 'Enterprise',
       desc1:
         'Ahora también te ayudamos a crecer tu negocio. Contrata los servicios de desarrollo de software con los mejores programadores de la comunidad Fazt Tech. Crea tus aplicaciones web, moviles, de escritorio y cualquier otra idea que tengas para tu negocio.',
       desc2: '',
-      img: 'image2.jpg'
+      img: 'image2.jpg',
+      url: '#'
     }
   ];
   const [optionSelect, setoptionSelect] = useState(fakedata[0]);
@@ -279,7 +281,9 @@ const ComponentWeDo: React.FC = () => {
             <h3>{optionSelect.title}</h3>
             <span>{optionSelect.desc1}</span>
             {optionSelect.desc2 !== '' ? <span>{optionSelect.desc2}</span> : null}
-            <ButtonShared color="accent">Empezar hoy</ButtonShared>
+            <a href={optionSelect.url} target="_blank" rel="noreferrer">
+              <ButtonShared color="accent">Empezar hoy</ButtonShared>
+            </a>
           </TitleSelectContainerStyled>
         </ContentContainerStyled>
       </WeDoContainerStyled>
