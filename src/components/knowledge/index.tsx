@@ -20,19 +20,29 @@ const KnowledgeStyled = styled.div`
     background-color: #1d1d1d;
     position: absolute;
     bottom: -160px;
-    transform: skewY(12deg);
     z-index: 0;
   }
   ::after {
+    transform: skewY(12deg);
     border-radius: 10px;
+    ${({ theme }) => theme.Mediaquery.small} {
+      max-width: 720px;
+    }
     @media screen and (min-width: 834px) {
       max-width: 780px;
     }
     ${({ theme }) => theme.Mediaquery.medium} {
       max-width: 1300px;
     }
+    @media screen and (min-width: 1680px) {
+      transform: skewY(10deg);
+    }
+    @media screen and (min-width: 1920px) {
+      transform: skewY(7deg);
+    }
   }
   :before {
+    position: absolute;
     width: 100vw;
     bottom: -130px;
     left: 0;
@@ -40,8 +50,11 @@ const KnowledgeStyled = styled.div`
     transform: skewY(10deg);
     z-index: 0;
     background-color: #2a3b46;
+    @media screen and (min-width: 1680px) {
+      transform: skewY(8deg);
+    }
     @media screen and (min-width: 1920px) {
-      display: none;
+      transform: skewY(5deg);
     }
   }
 `;
@@ -91,8 +104,10 @@ const KnowledgeContainerStyled = styled.div`
   }
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 80px 40px;
-    flex-direction: row;
     justify-content: space-between;
+  }
+  ${({ theme }) => theme.Mediaquery.large} {
+    flex-direction: row;
   }
 `;
 const TitleContainerStyled = styled.div`
@@ -103,7 +118,7 @@ const TitleContainerStyled = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  ${({ theme }) => theme.Mediaquery.medium} {
+  ${({ theme }) => theme.Mediaquery.extralarge} {
     align-items: flex-start;
   }
   h1 {
@@ -114,7 +129,6 @@ const TitleContainerStyled = styled.div`
     line-height: 149.2%;
     text-align: center;
     color: #ffffff;
-    margin: 0px 10px;
     margin-bottom: 16px;
     ${({ theme }) => theme.Mediaquery.mini} {
       width: 320px;
@@ -126,7 +140,7 @@ const TitleContainerStyled = styled.div`
       line-height: 149.2%;
       width: 557px;
     }
-    ${({ theme }) => theme.Mediaquery.medium} {
+    ${({ theme }) => theme.Mediaquery.extralarge} {
       text-align: left;
       font-size: 39.06px;
       line-height: 59px;
@@ -150,7 +164,7 @@ const TitleContainerStyled = styled.div`
       line-height: 149.2%;
       width: 582px;
     }
-    ${({ theme }) => theme.Mediaquery.medium} {
+    ${({ theme }) => theme.Mediaquery.extralarge} {
       text-align: left;
     }
   }
@@ -169,10 +183,13 @@ const VideoContainerStyled = styled.div`
     flex-wrap: wrap;
     margin-left: 2rem;
   }
+  ${({ theme }) => theme.Mediaquery.medium} {
+    width: 70%;
+  }
   @media screen and (min-width: 834px) {
     margin-left: 0;
   }
-  ${({ theme }) => theme.Mediaquery.medium} {
+  ${({ theme }) => theme.Mediaquery.extralarge} {
     width: 500px;
     height: 350px;
     flex-direction: column;
@@ -216,7 +233,9 @@ const ComponentKnowledge: React.FC = () => {
               mucho más. Compartimos articulos para que te ayududen reforzar tus conocimientos en la creación
               de tus aplicaciones.
             </p>
-            <ButtonShared color="accent">Ver el blog completo</ButtonShared>
+            <a href="https://blog.faztweb.com/" target="_blank" rel="noreferrer">
+              <ButtonShared color="accent">Ver el blog completo</ButtonShared>
+            </a>
           </TitleContainerStyled>
           <VideoContainerStyled>
             <div className="thumblog-item">
