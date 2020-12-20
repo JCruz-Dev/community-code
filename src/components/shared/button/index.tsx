@@ -8,16 +8,18 @@ type ButtonTypes = {
 function colorSwitcher(color = '', theme) {
   switch (color) {
     case 'secondary':
-      return theme.Colors.ColorsMain.dark;
+      return { color: theme.Colors.ColorsMain.dark, hover: '#9D1F43' };
     case 'accent':
-      return theme.Colors.ColorsMain.accent;
+      return { color: theme.Colors.ColorsMain.accent, hover: '#194385' };
+    case 'primary':
+      return { color: theme.Colors.ColorsMain.base, hover: '#C31818' };
     default:
-      return theme.Colors.ColorsMain.dark;
+      return { color: theme.Colors.ColorsMain.dark, hover: '#9D1F43' };
   }
 }
 
 const ButtonStyled = styled.button<ButtonTypes>`
-  background-color: ${({ theme, color }) => colorSwitcher(color, theme)};
+  background-color: ${({ theme, color }) => colorSwitcher(color, theme).color};
   height: max-content;
   width: 250px;
   border: none;
@@ -30,6 +32,9 @@ const ButtonStyled = styled.button<ButtonTypes>`
   padding: 24px 16px;
   ${({ theme }) => theme.Mediaquery.medium} {
     padding: 24px 32px;
+  }
+  :hover {
+    background-color: ${({ theme, color }) => colorSwitcher(color, theme).hover};
   }
   cursor: pointer;
   ${({ size }) =>

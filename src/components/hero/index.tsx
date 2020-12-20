@@ -181,7 +181,7 @@ const ComponentHero: React.FC = () => {
       <HeroContainerStyled>
         <TitleContainerStyled>
           <h1>Creamos educación libre y accesible para que nunca dejes de aprender.</h1>
-          <ButtonShared>Conoce lo que hacemos</ButtonShared>
+          <ButtonShared color="secondary">Conoce lo que hacemos</ButtonShared>
         </TitleContainerStyled>
         <VideoContainerStyled>
           <iframe
