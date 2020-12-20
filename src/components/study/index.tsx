@@ -22,8 +22,11 @@ const StudyStyled = styled.div`
     bottom: -130px;
     transform: skewY(-10deg);
     z-index: 0;
+    @media screen and (min-width: 1680px) {
+      transform: skewY(-8deg);
+    }
     @media screen and (min-width: 1920px) {
-      display: none;
+      transform: skewY(-5deg);
     }
   }
   ${({ theme }) => theme.Mediaquery.extralarge} {
@@ -69,6 +72,12 @@ const StudyContainerColorStyled = styled.div`
     ${({ theme }) => theme.Mediaquery.medium} {
       max-width: 1300px;
       bottom: -170px;
+    }
+    @media screen and (min-width: 1680px) {
+      transform: skewY(-11deg);
+    }
+    @media screen and (min-width: 1920px) {
+      transform: skewY(-8deg);
     }
   }
 `;
