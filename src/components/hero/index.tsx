@@ -59,7 +59,6 @@ const TitleContainerStyled = styled.div`
     text-align: center;
     max-width: 320px;
     color: #ffffff;
-    margin: 0 10px;
     margin-bottom: 32px;
     ${({ theme }) => theme.Mediaquery.small} {
       text-align: left;
