@@ -24,11 +24,16 @@ const NewsletterStyled = styled.div`
   transition: all 0.5s ease;
 `;
 const NewsletterContainerStyled = styled.form`
-  width: max-content;
   height: max-content;
   padding: 18px 18px;
   display: flex;
   flex-direction: column;
+  ${({ theme }) => theme.Mediaquery.mini} {
+    width: 300px;
+  }
+  ${({ theme }) => theme.Mediaquery.extrasmall} {
+    width: max-content;
+  }
   ${({ theme }) => theme.Mediaquery.small} {
     flex-direction: row;
   }
@@ -41,7 +46,6 @@ const NewsletterContainerStyled = styled.form`
   border-radius: 10px;
   label {
     input {
-      width: 300px;
       height: 51px;
       ${({ theme }) => theme.Mediaquery.small} {
         width: 350px;
@@ -59,13 +63,25 @@ const NewsletterContainerStyled = styled.form`
       line-height: 19px;
       color: #948e8e;
       padding-left: 10px;
+      ${({ theme }) => theme.Mediaquery.mini} {
+        width: 265px;
+      }
+      ${({ theme }) => theme.Mediaquery.extrasmall} {
+        width: 300px;
+      }
     }
   }
   button {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    cursor: pointer;
+    ${({ theme }) => theme.Mediaquery.mini} {
+      width: 265px;
+    }
+    ${({ theme }) => theme.Mediaquery.extrasmall} {
+      width: 300px;
+    }
     ${({ theme }) => theme.Mediaquery.small} {
       width: 130px;
       margin-top: 0px;
@@ -84,6 +100,10 @@ const NewsletterContainerStyled = styled.form`
     align-items: center;
     text-align: center;
     color: #ffffff;
+    :hover {
+      transition: all 0.2s ease-in-out;
+      background-color: #c0263c;
+    }
   }
 `;
 
