@@ -5,11 +5,19 @@ type ButtonTypes = {
   size?: 'small' | 'medium' | 'large';
   color?: 'primary' | 'secondary' | 'accent';
 };
+function colorSwitcher(color = '', theme) {
+  switch (color) {
+    case 'secondary':
+      return theme.Colors.ColorsMain.dark;
+    case 'accent':
+      return theme.Colors.ColorsMain.accent;
+    default:
+      return theme.Colors.ColorsMain.dark;
+  }
+}
 
 const ButtonStyled = styled.button<ButtonTypes>`
-  background-color: ${({ theme }) => theme.Colors.ColorsMain.dark};
-  background-color: ${({ theme, color }) => color === 'secondary' && theme.Colors.ColorsMain.dark};
-  background-color: ${({ theme, color }) => color === 'accent' && theme.Colors.ColorsMain.accent};
+  background-color: ${({ theme, color }) => colorSwitcher(color, theme)};
   height: max-content;
   width: 250px;
   border: none;
