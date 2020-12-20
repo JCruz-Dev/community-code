@@ -118,6 +118,9 @@ const TitleContainerStyled = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+  @media screen and (min-width: 1280px) {
+    align-items: flex-start;
+  }
   ${({ theme }) => theme.Mediaquery.extralarge} {
     align-items: flex-start;
   }
@@ -139,6 +142,9 @@ const TitleContainerStyled = styled.div`
       font-size: 25px;
       line-height: 149.2%;
       width: 557px;
+    }
+    @media screen and (min-width: 1280px) {
+      text-align: left;
     }
     ${({ theme }) => theme.Mediaquery.extralarge} {
       text-align: left;
@@ -163,6 +169,9 @@ const TitleContainerStyled = styled.div`
       font-size: 20px;
       line-height: 149.2%;
       width: 582px;
+    }
+    @media screen and (min-width: 1280px) {
+      text-align: left;
     }
     ${({ theme }) => theme.Mediaquery.extralarge} {
       text-align: left;
