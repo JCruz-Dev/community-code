@@ -207,7 +207,7 @@ const ComponentStudy: React.FC = () => {
                 distintos cursos con temas diferentes para lo que requieras en tu carrera y compartir lo
                 aprendido con la comunidad.
               </p>
-              <ButtonShared>Ver todos los cursos</ButtonShared>
+              <ButtonShared color="secondary">Ver todos los cursos</ButtonShared>
             </TitleContainerStyled>
             <StudtyImg />
           </TitleContainerFullStyled>
