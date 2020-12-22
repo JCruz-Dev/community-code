@@ -150,7 +150,7 @@ const ContentIconItem = styled.div`
     background-color: #282d2f;
     width: 108px;
     height: 54.64px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 13px;
@@ -172,6 +172,9 @@ const ContentIconItem = styled.div`
       height: 20px;
       background-color: #282d2f;
       transform: rotate(45deg);
+    }
+    ${({ theme }) => theme.Mediaquery.large} {
+      display: flex;
     }
   }
 `;
