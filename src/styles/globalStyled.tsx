@@ -23,6 +23,7 @@ const GlobalStyles = () => (
       body {
         background-color: #fafafa;
         overflow-x: hidden;
+        font-family: 'Roboto';
       }
 
       blockquote,
@@ -39,6 +40,9 @@ const GlobalStyles = () => (
       pre {
         margin: 0;
       }
+      p {
+        line-height: 1.5;
+      }
 
       h1,
       h2,
@@ -48,6 +52,7 @@ const GlobalStyles = () => (
       h6 {
         font-size: inherit;
         font-weight: inherit;
+        line-height: 1.5;
       }
 
       ol,
